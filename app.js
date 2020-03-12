@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", e =>{
     form.addEventListener("submit", event=>{
         event.preventDefault();
 
-    let DE= document.querySelector("#cboDe").value,
-        A = document.querySelector("#cboA").value,
-        cantidad = document.querySelector("#txtCantidadConversion").value,
-        opcion = document.getElementById('cboConvertir');
-
+    let de= document.querySelector("#cboDe").value,
+        a = document.querySelector("#cboA").value,
+        cantidad = document.querySelector("#txtCantidadConversor").value,
+        opcion = document.getElementById('cboConvertir').value;
         console.log(de, a, cantidad);
+        
         let monedas= {
             "dolar":1,
             "euro":0.93,
@@ -16,13 +16,13 @@ document.addEventListener("DOMContentLoaded", e =>{
             "lempira":24.9,
             "cordoba":34.19
 
-        },
+        };
         peso ={
             "gramo":1000,
             "onza":35.274,
             "libra":2.20462,
             "kilogramo":1
-        },
+        };
 
         longitud={
             "milimetro":1000,
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", e =>{
             "kilometro":0.001,
             "milla":0.000621371
 
-        },
+        };
         almacenamiento={
             "byte":8,
             "kilobyte":1000,
@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", e =>{
     else if(opcion.value =="almacenamiento"){
         $res.innerHTML= `Respuesta: ${(almacenamiento[a]/almacenamiento[de]*cantidad).toFixed(2)}`;
     };
-});
-
+  
+  });
 
 });
 
@@ -80,8 +80,8 @@ function elegir_opcion(){
 
     } else if(opcion.value == "almacenamiento"){
         var array = ["byte!Byte","kilobyte!Kilobyte","megabyte!Megabyte","gigabyte!Gigabyte"];
-
     };
+
     for (var i=0;i<array.length;i++){
         var repair = array[i].split("!");
         var newop = document.createElement("option");
@@ -95,8 +95,7 @@ function elegir_opcion(){
         newop.value = reair[0]
         newop.innerHTML= repair[1];
         a1.options.add(newop);
-
     };
-    }
+}
 
 
