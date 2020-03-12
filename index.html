@@ -4,35 +4,64 @@
         <meta charset ="UTF-8">
         <meta name ="viewport" content ="width=divice-width, initial-scale = 1.0">
         <meta http-equiv="X-UA-Compatible" content="ie==edge">
-        <title>APP ALUMNOS OFLINE </title>        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>Conversores </title>        
     </head>
     <body>
-        <p id="guardado"></p>
-        <p>ALUMNOS OFLINE</p>
-        <form method="post" id= "frmAlumno">
-                
-            <div class="fila">
-                <input pattern ="^[A-Z]{4}[0-9]{6}" required type = "text" placeholder= "Codigo" id="txtCodigoAlumno">
-
+        <form method= "post" id= "frmConversores">
+            <div class="container">
+                div clas ="row row-cols-2">
+                <div class="col text-center bg-info text-white">
+                    APP Conversores
                 </div>
+                <div class= "col">
+                    tipo de corversion:
+                    <select id= "cboConversion" class="form-control" onchange="elegir_opciones()">
+                    <option value="seleccione">Seleccione conversion</option>
+                    <option value="moneda">Moneda</option>
+                    <option value ="peso">Peso</option>
+                    <option value="longitud">Longitud</option>
+                    <option value ="almacenamiento">Almacenamiento</option>
 
-              <div required class="fila">
-                <input pattern="[A-Za-zñÑ ]{3,65}" required type="text" placeholder="Nombre" id="txtNombreAlumno">
-            </div>
-
-            <div required class="fila">
-                <input pattern="[A-Za-zñÑ ]{3,65}" required type="text" placeholder="Direccion" id="txtDireccionAlumno">
-            </div>
-                <div required class ="fila">
-                <input pattern="[0-9]{4}-[0-9]{4}" required type ="text" placeholder="Telefono" id="txtTelefonoAlumno"> 
-               
+                    </select>
                 </div>
-                <div class="fila">
-                    <input type="submit" value ="Guardar" id="txtGuardarAlumno">
-                    <input type ="button" id ="btnRecuperarAlumnos" value="Recuperar">
             </div>
+            <div class="row row-cols-4 p-2">
+                <div class="col">
+                    De:
 
-        </form>
+                    <select id="cboDe" class="form-control">
+                        <option value="---">---</option>
+
+                    </select>
+            </div>
+            <div class="col">
+                A:
+              <select id="cboA" class="form-control">
+                  <option value="---">---</option>
+
+              </select>  
+            </div>
+        </div>
+
+        <div class="row row-cols-4 p-2">
+            <input type="text" required="required" pattern="[0-9.]{1,}" placeholder="Cantidad" id="txtCantidadConversor" class="form-control">
+
+        </div>
+        <div class="col text-center">
+            <p class="bg-success text-white" id="lblRespuesta">Respuesta: ?</p>
+
+        </div>
+    </div>
+    <div class="row row-cols-2 p-2">
+        <div class="col text-center">
+            <input type ="submit" id= "btnConvertir" value ="convertir" class="btn btn-primary">
+
+        </div>
+      </div>
+    </div>
+  </form>
+        
     <script src="app.js"></script>
     </body>
     </html>
