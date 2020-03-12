@@ -19,7 +19,7 @@ body {
 }
 input,textarea{
     height:24px;
-    border: solid 1px rgb(158,200,255);
+    border: solid 1px rgb(158, 200, 255);
     border-radius: 5px;
 }
 textarea{
@@ -28,7 +28,7 @@ textarea{
 }
 input[type=submit],
 input[type=button]{
-    background-color: rgb(74,137,255);
+    background-color: rgb(74, 137, 255);
     color: #FFF;
     text-transform: uppercase;
     height: 30px;
@@ -48,5 +48,5 @@ input[type=date]:valid{
 input [type=text]:invalid,
 textarea:invalid,
 input[type=date]:invalid{
-    background-color:rgb(255,172,172);
+    background-color:rgb(255, 172, 172);
 }

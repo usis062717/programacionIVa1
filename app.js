@@ -2,10 +2,16 @@ document.addEventListener("DOMContentLoaded", (event) =>{
     const formAlumnos= document.querySelector("#frmAlumno");
     formAlumnos.addEventListener("submit",(e)=>{
         e.preventDefault();
-        let codigo =document.querySelector("#txtCodigoAlumno").value,
+    let codigo =document.querySelector("#txtCodigoAlumno").value,
         nombre = document.querySelector("#txtNombreAlumno").value,
         direccion = document.querySelector("#txtDireccionAlumno").value,
         telefono= document.querySelector("#txtTelefonoAlumno").value;
+
+        var infocodigo="codigo"+""+codigo;
+        var infonombre="nombre"+""+nombre;
+        var infodireccion="direccion"+""+direccion;
+        var infotelefono="telefono"+""+telefono;
+
 
         if ('localStorge' in window){
             window.localStorage.setItem("codigo",codigo);

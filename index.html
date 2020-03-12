@@ -2,31 +2,37 @@
 <html lang ="en">
     <head>
         <meta charset ="UTF-8">
-        <meta name ="viewport" content ="width=divice-width, initial-scale = 10">
+        <meta name ="viewport" content ="width=divice-width, initial-scale = 1.0">
         <meta http-equiv="X-UA-Compatible" content="ie==edge">
-        <link rel ="stylesheet" href="estilos.css">
         <title>APP ALUMNOS OFLINE </title>        
     </head>
     <body>
+        <p id="guardado"></p>
         <p>ALUMNOS OFLINE</p>
         <form method="post" id= "frmAlumno">
-            <div class="container">
-                <div class="fila">
-                <input pattern =""^[A-Z]{4}[0-9]{6}" required type="text" placeholder="Codigo" id="txtCodigoAlumno">
+                
+            <div class="fila">
+                <input pattern ="^[A-Z]{4}[0-9]{6}" required type = "text" placeholder= "Codigo" id="txtCodigoAlumno">
 
                 </div>
-                div required class="fila">
+
+              <div required class="fila">
                 <input pattern="[A-Za-zñÑ ]{3,65}" required type="text" placeholder="Nombre" id="txtNombreAlumno">
             </div>
-                <div class="fila">
-                    <input required type="text" placeholder="Direccion" id="txtDireccionAlumno">
 
-                </div>
-                <div class="fila">
-                    <input type="submit" value ="Gaurdar" id="txtGuyardarAlumno">
-                    <input type ="button" id ="btnRecuperarAlumnos" value="Recuperar">
-
-                </div>
+            <div required class="fila">
+                <input pattern="[A-Za-zñÑ ]{3,65}" required type="text" placeholder="Direccion" id="txtDireccionAlumno">
             </div>
+                <div required class ="fila">
+                <input pattern="[0-9]{4}-[0-9]{4}" required type ="text" placeholder="Telefono" id="txtTelefonoAlumno"> 
+               
+                </div>
+                <div class="fila">
+                    <input type="submit" value ="Guardar" id="txtGuardarAlumno">
+                    <input type ="button" id ="btnRecuperarAlumnos" value="Recuperar">
+            </div>
+
         </form>
-</html>
+    <script src="app.js"></script>
+    </body>
+    </html>
