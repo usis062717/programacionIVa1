@@ -10,10 +10,11 @@
     <body>
         <form method= "post" id= "frmConversores">
             <div class="container">
-                div clas ="row row-cols-2">
+                <div clas ="row row-cols-2">
                 <div class="col text-center bg-info text-white">
                     APP Conversores
                 </div>
+
                 <div class= "col">
                     tipo de corversion:
                     <select id= "cboConversion" class="form-control" onchange="elegir_opciones()">
@@ -23,12 +24,12 @@
                     <option value="longitud">Longitud</option>
                     <option value ="almacenamiento">Almacenamiento</option>
 
-                    </select>
-                </div>
-            </div>
+                </select>
+              </div>
+             </div>
             <div class="row row-cols-4 p-2">
                 <div class="col">
-                    De:
+                    DE:
 
                     <select id="cboDe" class="form-control">
                         <option value="---">---</option>
@@ -45,11 +46,14 @@
         </div>
 
         <div class="row row-cols-4 p-2">
-            <input type="text" required="required" pattern="[0-9.]{1,}" placeholder="Cantidad" id="txtCantidadConversor" class="form-control">
+            <div class ="col text-center">
+                <input type="text" required="required" pattern="[0-9.]{1,}" placeholder="Cantidad" id="txtCantidadConversor" class="form-control">
+            </div>
+            
 
         </div>
         <div class="col text-center">
-            <p class="bg-success text-white" id="lblRespuesta">Respuesta: ?</p>
+            <p class="bg-success text-white" id="lblRespuesta">Respuesta:?</p>
 
         </div>
     </div>
@@ -63,5 +67,5 @@
   </form>
         
     <script src="app.js"></script>
-    </body>
-    </html>
+</body>
+</html>

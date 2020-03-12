@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", e =>{
     form.addEventListener("submit", event=>{
         event.preventDefault();
 
-    let de= document.querySelector("#cboDe").value,
-        a = document.querySelector("#cboA").value,
-        cantidad = document.querySelector("#txtCantidadConversor").value,
+    let DE= document.querySelector("#cboDe").value,
+        A = document.querySelector("#cboA").value,
+        cantidad = document.querySelector("#txtCantidadConversion").value,
         opcion = document.getElementById('cboConvertir');
 
         console.log(de, a, cantidad);
