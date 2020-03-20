@@ -6,13 +6,7 @@ document.addEventListener("DOMContentLoaded", (event) =>{
         nombre = document.querySelector("#txtNombreAlumno").value,
         direccion = document.querySelector("#txtDireccionAlumno").value,
         telefono= document.querySelector("#txtTelefonoAlumno").value;
-
-        var infocodigo="codigo"+""+codigo;
-        var infonombre="nombre"+""+nombre;
-        var infodireccion="direccion"+""+direccion;
-        var infotelefono="telefono"+""+telefono;
-
-
+        
         if ('localStorge' in window){
             window.localStorage.setItem("codigo",codigo);
             window.localStorage.setItem("nombre",nombre);
@@ -32,7 +26,7 @@ document.addEventListener("DOMContentLoaded", (event) =>{
             document.querySelector("#txtTelefonoAlumno").value = window.localStorage.getItem("telefono");
         } else{
             alert("almacenamiento en local No soportado!!! Actualizar!");
+        
         }
-
     });
 });
