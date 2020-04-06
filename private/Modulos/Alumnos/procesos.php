@@ -64,14 +64,13 @@ class alumno{
         $this->db->consultas('
             select alumnos.idAlumno, alumnos.codigo, alumnos.nombre, alumnos.direccion, alumnos.telefono
             from alumnos
-            where alumnos.codigo like "%'.$valor.'%" or alumnos.nombre like "%'.$valor.'%"
+            where alumnos.codigo like "%'.$valor.'%" or alumnos.nombre like "%'.$valor.'%" or alumnos.telefono like"%'.$valor.'%"
         ');
         return $this->respuesta = $this->db->obtener_datos();
 
     }
 
     public function eliminarAlumno($idAlumno=''){
-    
         $this->db->consultas('
             delete alumnos
             from alumnos

@@ -1,4 +1,4 @@
-?php 
+<?php 
 include('../../Config/Config.php');
 $docente = new docente($conexion);
 
@@ -15,8 +15,8 @@ class docente{
     public $respuesta = ['msg'=>'correcto'];
 
 
-        public function __construct($db){
-            $this->db=$db;
+    public function __construct($db){
+       $this->db=$db;
     }
     public function recibirDatos($docente){
         $this->datos = json_decode($docente, true);
@@ -33,6 +33,9 @@ class docente{
             $this->respuesta['msg'] = 'por favor ingrese el nombre del docente';
 
         }
+        if( empty($this->datos['direccion']) ){
+               $this->respuesta['msg'] = 'por favor ingrese la direccion del docente';
+        }
 
         if( empty($this->datos['nit']) ){
             $this->respuesta['msg'] = 'por favor ingrese el NIT del docente';
@@ -47,30 +50,29 @@ class docente{
                 $this->db->consultas('
 
                     INSERT INTO docentes (codigo,nombre,NIT) VALUES(
-                        "'. $this->datos['codigo'] .'",
-                        "'. $this->datos['nombre'] .'",
+                        "'. $this->datos['codigo'].'",
+                        "'. $this->datos['nombre'].'",
+                        "'. $this->datos['direccion'].'",
+                        "'. $this->datos['telefono'].'",
                         "'. $this->datos['nit'] .'"
 
                     )
 
-
-
                 ');
 
-
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
-
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
                    UPDATE docentes SET
                         codigo     = "'. $this->datos['codigo'] .'",
-                        nombre     = "'. $this->datos['nombre'] .'",
                         nit  = "'. $this->datos['nit'] .'"
-
+                        nombre     = "'. $this->datos['nombre'] .'",
+                        direccion  = "'. $this->datos['direccion'] .'",
+                        telefono   = "'. $this->datos['telefono'] .'",
+                        
                     WHERE idDocente = "'. $this->datos['idDocente'] .'"
 
                 ');
-
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
             }
 
@@ -82,7 +84,7 @@ class docente{
         $this->db->consultas('
             select docentes.idDocente, docentes.codigo, docentes.nombre, docentes.nit
             from docentes
-            where docentes.codigo like "%'.$valor.'%" or docentes.nombre like "%'.$valor.'%"
+            where docentes.codigo like "%'.$valor.'%" or docentes.nombre like "%'.$valor.'%" or docentes.nit like"
         ');
 
         return $this->respuesta = $this->db->obtener_datos();
@@ -96,8 +98,8 @@ class docente{
             where docentes.idDocente = "'.$idDocente.'"
 
         ');
-
         $this->respuesta['msg'] = 'Registro eliminado correctamente';
 
     }
 }
+?>

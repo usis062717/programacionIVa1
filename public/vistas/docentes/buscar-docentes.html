@@ -21,13 +21,24 @@
                         <th>CODIGO</th>
                         <th>NOMBRE</th>
                         <th>NIT</th>
+                        <th>TELEFONO</th>
                         <th> </th>
+                    
                     </tr>
                 </thead>
                 <tbody>
-
+                    <tr v-for="empleado in losdocentes" :key="empleado.idDocente" v-on:click="modificarDocente(empleado)">
+                        <td>{{ empleado.codigo }}</td>
+                        <td>{{ empleado.nit }}</td>
+                        <td>{{ empleado.nombre }}</td>
+                        <td>{{ empleado.telefono }}</td>
+                        <td>
+                            <input v-on:click="eliminarDocente(empleado.idDocente)" type="button" class="btn btn-outline-danger text-white" value="del">
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </form>
+<script src="public/vistas/docentes/buscar-docentes.js"></script> 

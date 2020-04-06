@@ -1,25 +1,30 @@
+var appalumno= new VTTCue({
+    el: '#frm-alumnos',
 
-            var $ = el => document.querySelector(el),             
-            frmAlumnos = $("#frm-alumnos");
-            frmAlumnos.addEventListener("submit",e=>{        
-                e.preventDefault();
-                e.stopPropagation();
+    data:{
+        alumno:{
+            idAlumno  : 0,
+            accion    : 'nuevo',
+            codigo    : '',
+            nombre    : '',
+            direccion : '',
+            telefono  : '',
+            msg       : ''
+        }
 
-                let alumnos = {
-                    accion    : frmAlumnos.dataset.accion,
-                    idAlumno  : frmAlumnos.dataset.idalumno,
-                    codigo    : $("#txtCodigoAlumno").value,
-                    nombre    : $("#txtNombreAlumno").value,
-                    direccion : $("#txtDireccionAlumno").value,        
-                    telefono  : $("#txtTelefonoAlumno").value
-
-                };
-
-                fetch(`private/Modulos/alumnos/procesos.php?proceso=recibirDatos&alumno=${JSON.stringify(alumnos)}`).then( resp=>resp.json() ).then(resp=>{
-                    $("#respuestaAlumno").innerHTML = `
-                        <div class="alert alert-success" role="alert">
-                            ${resp.msg}
-                        </div>
-                    `;        
-                });            
-        });
+    },
+    methods:{
+        guardarAlumno:function(){
+            etch(`private/Modulos/alumnos/procesos.php?proceso=recibirDatos&alumno=${JSON.stringify(this.alumno)}`).then( resp=>resp.json() ).then(resp=>{
+                this.alumno.msg = resp.msg;
+                this.alumno.idAlumno = 0;
+                this.alumno.codigo = '';
+                this.alumno.nombre = '';
+                this.alumno.direccion = '';
+                this.alumno.telefono  = '';
+                this.alumno.accion = 'nuevo';
+                appBuscarAlumnos.buscarAlumno();
+            });
+        }
+    }
+});
