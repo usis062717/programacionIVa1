@@ -1,7 +1,6 @@
 <form method="POST" id="frm-buscar-docentes">
     <div class="card text-white bg-dark mb-3" style="max-width: 48rem;">
         <div class="car-header"> 
-            
             BUSQUEDA DOCENTES
 
             <button type="button" id="btn-close-buscar-docentes" class="close" aria-label="Close">
@@ -13,27 +12,30 @@
             <table id="tbl-buscar-docentes" class="table-striped table-dark table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th colspan="5">
-                            <input type="text" id="txtBuscarDocente" placeholder="codigo o nombre" class="form-control">
+                        <th colspan="7">
+                            <input type="text"  v-model="valor" v-on:keyup="buscarDocentes" placeholder="codigo, nombre, dui o nit" class="form-control">
                         </th>
                     </tr>
                     <tr>
                         <th>CODIGO</th>
                         <th>NOMBRE</th>
-                        <th>NIT</th>
+                        <th>DIRECCION</th>
                         <th>TELEFONO</th>
-                        <th> </th>
-                    
+                        <th>DUI</th>
+                        <th>NIT</th>
+                        <th> </th>  
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="empleado in losdocentes" :key="empleado.idDocente" v-on:click="modificarDocente(empleado)">
-                        <td>{{ empleado.codigo }}</td>
-                        <td>{{ empleado.nit }}</td>
-                        <td>{{ empleado.nombre }}</td>
-                        <td>{{ empleado.telefono }}</td>
+                    <tr v-for="docente in mis_docentes" :key="empleado.idDocente" v-on:click="modificarDocente(empleado)">
+                        <td>{{ docente.codigo }}</td>
+                        <td>{{ docente.nombre }}</td>
+                        <td>{{ docente.direccion }}</td>
+                        <td>{{ docente.tlefono }}</td>
+                        <td>{{ docente.dui }}</td>
+                        <td>{{ docente.nit }}</td>
                         <td>
-                            <input v-on:click="eliminarDocente(empleado.idDocente)" type="button" class="btn btn-outline-danger text-white" value="del">
+                            <input v-on:click="eliminarDocente(docente.idDocente)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>
                     </tr>
                 </tbody>

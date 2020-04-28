@@ -1,4 +1,4 @@
-var appalumno= new VTTCue({
+var appalumnos= new Vue({
     el: '#frm-alumnos',
 
     data:{
@@ -14,17 +14,21 @@ var appalumno= new VTTCue({
 
     },
     methods:{
-        guardarAlumno:function(){
-            etch(`private/Modulos/alumnos/procesos.php?proceso=recibirDatos&alumno=${JSON.stringify(this.alumno)}`).then( resp=>resp.json() ).then(resp=>{
+        guardarAlumnos(){
+            fetch(`private/Modulos/alumnos/procesos.php?proceso=recibirDatos&alumno=${JSON.stringify(this.alumno)}`).then( resp=>resp.json() ).then(resp=>{
                 this.alumno.msg = resp.msg;
+            });
+        },
+            limpiarAlumnos(){
                 this.alumno.idAlumno = 0;
+                this.alumno.accion = 'nuevo';
                 this.alumno.codigo = '';
                 this.alumno.nombre = '';
                 this.alumno.direccion = '';
                 this.alumno.telefono  = '';
-                this.alumno.accion = 'nuevo';
-                appBuscarAlumnos.buscarAlumno();
-            });
+                this.alumno.msg = '';
+
+            }
         }
-    }
+    
 });

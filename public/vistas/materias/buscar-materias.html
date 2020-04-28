@@ -12,19 +12,19 @@
                 <thead>
                     <tr>
                         <th colspan="5">
-                            <input type="text" v-model="valor" v-on:keyup="buscarMateria" placeholder="falcutad o materia" class="form-control">
+                            <input type="text" v-model="valor" v-on:keyup="buscarMateria" placeholder="codigo o nombre" class="form-control">
                         </th>
                     </tr>
                     <tr>
-                        <th>FALCUTAD</th>
-                        <th>MATERIA</th>                      
+                        <th>CODIGO</th>
+                        <th>NOMBRE</th>                      
                         <th> </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="estudios in mismaterias" :key="estudios.idMateria" v-on:click="modificarMateria(estudios)">
-                        <td>{{ estudios.facultad }}</td>
-                        <td>{{ estudios.materia }}</td>
+                        <td>{{ estudios.codigo }}</td>
+                        <td>{{ estudios.nombre }}</td>
                         <td>
                             <input v-on:click="eliminarMateria(estudios.idMateria)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>

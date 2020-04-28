@@ -2,3 +2,6 @@
 .modulos{
     position: absolute;
 } 
+.v-select{
+    background: darkcyan !important;
+}
