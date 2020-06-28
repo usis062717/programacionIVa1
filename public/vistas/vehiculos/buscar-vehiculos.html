@@ -1,0 +1,46 @@
+<form method="POST" id="frm-buscar-vehiculos">
+    <!--la forma que tendra el formulario -->
+
+    <div class="card text-white background-color mb-3" style="max-width: 48rem; background-color: #5964c9;">
+        <div class="car-header">
+            BUSQUEDA VEHICULOS
+
+            <button type="button" id="btn-close-buscar-vehiculos" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card-body" style="max-width: 24rem; background-color: #6d54c4;">
+            <table id="tbl-buscar-vehiculos" class="table-striped table-white table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th colspan="4"> <!-- aqui encontramos el tamaño que tendra el formulario -->
+
+                            <input type="text" v-model="valor" v-on:keyup="buscarVehiculo" placeholder="Escriba el datos a buscar" class="form-control">
+                        </th>
+                    </tr>
+                    <tr>         
+                        <!--los nombres de los los datos buscar  -->
+              
+                        <th>MARCA</th>
+                        <th>MODELO</th>
+                        <th>YEAR</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- las id de los datos almacenados para que se puedan modificar desde la base de datos -->
+
+                    <tr v-for="mivehiculo in misvehiculos" :key="mivehiculo.idVehiculo" v-on:click="modificarVehiculo(mivehiculo)" >
+                        <td>{{ mivhiculo.marca }}</td>
+                        <td>{{ mivehiculo.modelo }}</td>
+                        <td>{{ mivehiculo.year }}</td>
+                        <td>
+                            <input v-on:click="eliminarVehiculo(mivehiculo.idVehiculo)" type="button" class="btn btn-outline-danger text-white" value="del">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>
+<script src="public/vistas/vehiculos/buscar-vehiculos.js"></script> 

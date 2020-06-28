@@ -4,35 +4,51 @@
         <meta charset ="UTF-8">
         <meta name ="viewport" content ="width=divice-width, initial-scale = 1.0">
         <meta http-equiv="X-UA-Compatible" content="ie==edge">
-        <title>APP ALUMNOS OFLINE </title>        
-    </head>
-    <body>
-        <p id="guardado"></p>
-        <p>ALUMNOS OFLINE</p>
-        <form method="post" id= "frmAlumno">
-                
-            <div class="fila">
-                <input pattern ="^[A-Z]{4}[0-9]{6}" required type = "text" placeholder= "Codigo" id="txtCodigoAlumno">
-
-                </div>
-
-              <div required class="fila">
-                <input pattern="[A-Za-zñÑ ]{3,65}" required type="text" placeholder="Nombre" id="txtNombreAlumno">
-            </div>
-
-            <div required class="fila">
-                <input pattern="[A-Za-zñÑ ]{3,65}" required type="text" placeholder="Direccion" id="txtDireccionAlumno">
-            </div>
-                <div required class ="fila">
-                <input pattern="[0-9]{4}-[0-9]{4}" required type ="text" placeholder="Telefono" id="txtTelefonoAlumno"> 
+        <title>examen reposicion</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="public/css/estilos.css">
+        <link rel="stylesheet" href="https://unpkg.com/vue-select@3.0.0/dist/vue-select.css">
+        <link rel="stylesheet" href="public/alertifyjs/css/alertify.min.css">
+     </head>
+    
+      <nav class="navbar navbar background-color navbar-dark navbar-expand-sm" style="background-color: #341d61;">
+        <a class="navbar-brand" href="#">examen reposicion</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">   <!-- items que se mostraran en pantalla al lado del navbar -->
+              <a class="nav-link" href="#">  <span class="sr-only">(current)</span></a>
+            </li>
                
-                </div>
-                <div class="fila">
-                    <input type="submit" value ="Guardar" id="txtGuardarAlumno">
-                    <input type ="button" id ="btnRecuperarAlumnos" value="Recuperar">
-            </div>
+            <li class="nav-item">
+            <a class="nav-link mostrar-chat" data-modulo="chat" data-form="chat" href="#">Comentanos tus dudas (Chat)</a>
+          </li >
+            <li class="nav-item">
+            <a class="nav-link mostrar-vehiculos" data-modulo="vehiculos" data-form="vehiculos" href="#">Vehiculos</a>
+            </li>
+    
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">     <!-- llamado de las forms -->
+    <div id="modulos">
+        <div class="modulos" id="vistas-vehiculos"></div>
+        <div class="modulos" id="vistas-buscar-vehiculos"></div>
+    
+      </div>
+    </div>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="public/js/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/vue-select@3.0.0"></script>
+    <script src="public/alertifyjs/alertify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+    <script src="public/js/app.js"></script>
+    <script src="public/js/notificaciones.js"></script>
+    <script src="public/js/push.js"></script>
+  </body>
+</html>
 
-        </form>
-    <script src="app.js"></script>
-    </body>
-    </html>
+      

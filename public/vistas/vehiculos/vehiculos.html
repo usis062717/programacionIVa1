@@ -1,0 +1,62 @@
+<form v-on:submit.prevent="guardarVehiculos" v-on:reset="limpiarVehiculos" id="frm-vehiculos">  
+    <div class="card text-white background-color mb-3" style="max-width: 24rem; background-color: #176d74;">
+        <!-- esta parte conforma la cabezera del formulario -->
+
+        <div class="card-header">
+          editar vehiculos
+
+          <button type="button" id="btn-close-vehiculos" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <!-- este es el contenido del formulario -->
+
+      <div class="card-body" style="max-width: 24rem; background-color: #80b5ca;">
+          <div class="row row-cols-1 p-2">
+              <div class="row-col">
+                  <div class="col">
+                      MARCA:
+                  </div>
+                  <div class="col">
+                      <input type="text" required v-model="vehiculo.marca" placeholder="AAAA" class="form-control">
+                  </div>
+              </div>
+          </div>
+          <div class="row row-cols-1 p-2">
+              <div class="row-col">
+                  <div class="col">
+                      Modelo:
+                  </div>
+                  <div class="col">
+                      <input type="text" required v-model="vehiculo.modelo" placeholder="AAA AAAA" class="form-control">
+                  </div>
+          <div class="row row-cols-1 p2">
+                    <div class="row-col">
+                         <div class="col">
+   
+                     Year:
+                 </div>
+                <div class="col">
+                    <input type="date" required v-model="vehiculo.year" placeholder="0000" class="form-control">
+                </div>
+              </div>
+              
+            </div>
+
+          <!-- aqui esta las funciones para guardar, limpiar y mostrar la busqueda de este caso alumnos -->
+
+          <div class="row row-cols-1 p-2">
+              <div class="row-col text-center">
+                  <div class="col">
+                    <input id="btnGuardarVehiculos" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
+                      <input type="reset" class="btn btn-success" value="Limpiar">
+                      <input type="button" class="btn btn-outline-success mostrar-buscar-vehiculos text-white" data-modulo="vehiculos" data-form="buscar-vehiculos" value="Buscar" data-modulo="buscar-vehiculos" >
+                      <!-- siend aqui el llamado del formulario buscar-alumnos que se encuentra en la carpeta vistas -->
+
+                  </div>
+              </div>
+          </div>          
+      </div>
+  </div>
+</form>
+<script src="public/vistas/vehiculos/vehiculos.js"></script>
