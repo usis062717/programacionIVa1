@@ -31,7 +31,7 @@ var apptvehiculos = new Vue({
             this.vehiculo.marca="nuevo";
             this.vehiculo.modelo="";
             this.vehiculo.year="";
-            this.alumno.msg="";
+            this.vehiculo.msg="";
         }
     }
 });

@@ -31,7 +31,7 @@
                     <!-- las id de los datos almacenados para que se puedan modificar desde la base de datos -->
 
                     <tr v-for="mivehiculo in misvehiculos" :key="mivehiculo.idVehiculo" v-on:click="modificarVehiculo(mivehiculo)" >
-                        <td>{{ mivhiculo.marca }}</td>
+                        <td>{{ mivehiculo.marca }}</td>
                         <td>{{ mivehiculo.modelo }}</td>
                         <td>{{ mivehiculo.year }}</td>
                         <td>

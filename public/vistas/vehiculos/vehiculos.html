@@ -18,7 +18,7 @@
                       MARCA:
                   </div>
                   <div class="col">
-                      <input type="text" required v-model="vehiculo.marca" placeholder="AAAA" class="form-control">
+                      <input type="text" required v-model="vehiculo.marca" placeholder="AAAA" onKeyUp="this.value=this.value.toUpperCase();" class="form-control">
                   </div>
               </div>
           </div>
@@ -28,7 +28,7 @@
                       Modelo:
                   </div>
                   <div class="col">
-                      <input type="text" required v-model="vehiculo.modelo" placeholder="AAA AAAA" class="form-control">
+                      <input maxlength="4"  minlengh="2" ttype="text" required v-model="vehiculo.modelo" placeholder="AAAA" class="form-control">
                   </div>
           <div class="row row-cols-1 p2">
                     <div class="row-col">
@@ -40,7 +40,7 @@
                     <input type="date" required v-model="vehiculo.year" placeholder="0000" class="form-control">
                 </div>
               </div>
-              
+
             </div>
 
           <!-- aqui esta las funciones para guardar, limpiar y mostrar la busqueda de este caso alumnos -->
